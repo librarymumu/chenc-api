@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="work.chenc.indevent.mapper.UserMapper">
+  <select id="findAll" resultType="work.chenc.indevent.entity.UserEntity">
+        select * from sys_user where 1 = 1
+    </select>
+  <select id="selectUserByUserame" resultType="work.chenc.indevent.entity.UserEntity" parameterType="java.lang.String">
+    select
+      id,
+      username,
+      password
+    from
+      sys_user
+    where
+      username = #{username}
+    and
+      enable = '0'
+  </select>
+</mapper>
